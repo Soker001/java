@@ -1,0 +1,32 @@
+public class Main 
+{
+    public static void main(String[] args) 
+    {
+        String username="godwin1428";
+        if (valid(username)) 
+        {
+            System.out.println("The username is valid.");
+        } else
+        {
+            System.out.println("The username is invalid.");
+        }
+    }
+    
+    public static boolean valid(String username) 
+    {
+        int a=username.length();
+        if (a< 5) 
+        {
+            return false;
+        }
+        for (int i=0;i<a;i++)
+        {
+            char c = username.charAt(i);
+            if (!Character.isLetterOrDigit(c))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+}
