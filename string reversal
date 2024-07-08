@@ -1,0 +1,16 @@
+import java.io.*;
+import java.util.*;
+class s
+{
+    public static void main(String[] args)
+    {
+        String a="TEMPLE",n="";
+        int b=a.length();
+        
+        for(int i=b-1;i>-1;i--)
+        {
+            n=n+a.charAt(i);
+        }
+        System.out.println("reverse:"+n);
+    }
+}
