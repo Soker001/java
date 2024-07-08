@@ -1,0 +1,15 @@
+public class Main {
+    public static void main(String[] args) {
+        String a= "Saveetha School of Engineering";
+        a=a.toLowerCase();
+        int voCount = 0;
+        int b=a.length();
+        for (int i = 0; i < b; i++) {
+            char ch = statement.charAt(i);
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                voCount++;
+            }
+        }
+        System.out.println("Number of vowels = " + voCount);
+    }
+}
