@@ -1,0 +1,55 @@
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+public class Statistics {
+    public static void main(String[] args) {
+        int[] arr = {16, 18, 27, 16, 23, 21, 19};
+        System.out.println("Mean = " + calculateMean(arr));
+        System.out.println("Median = " + calculateMedian(arr));
+        System.out.println("Mode = " + calculateMode(arr));
+        int[][] testCases = {
+            {26, 28, 37, 26, 33, 31, 29},
+            {16, 18, 27, 16, 23, 21, 19},
+            {0, 160, 180, 270, 160, 230, 210, 190, 0},
+            {200, 180, 180, 270, 160, 270, 270, 190, 200},
+            {100, 100, 100, 100, 100, 100, 100, 100, 100}
+        };
+        for (int[] testCase : testCases) {
+            System.out.println("\nArray: " + Arrays.toString(testCase));
+            System.out.println("Mean = " + calculateMean(testCase));
+            System.out.println("Median = " + calculateMedian(testCase));
+            System.out.println("Mode = " + calculateMode(testCase));
+        }
+    }
+    public static double calculateMean(int[] arr) {
+        double sum = 0;
+        for (int num : arr) {
+            sum += num;
+        }
+        return sum / arr.length;
+    }
+    public static double calculateMedian(int[] arr) {
+        Arrays.sort(arr);
+        int middle = arr.length / 2;
+        if (arr.length % 2 == 0) {
+            return (arr[middle - 1] + arr[middle]) / 2.0;
+        } else {
+            return arr[middle];
+        }
+    }
+    public static int calculateMode(int[] arr) {
+        Map<Integer, Integer> frequencyMap = new HashMap<>();
+        for (int num : arr) {
+            frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
+        }
+        int mode = arr[0];
+        int maxCount = 0;
+        for (Map.Entry<Integer, Integer> entry : frequencyMap.entrySet()) {
+            if (entry.getValue() > maxCount) {
+                maxCount = entry.getValue();
+                mode = entry.getKey();
+            }
+        }
+        return mode;
+    }
+}
