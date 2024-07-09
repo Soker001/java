@@ -1,0 +1,33 @@
+    public static void main(String[] args) {
+        int[][] mat1 = {
+            {1, 2},
+            {5, 3}
+        };
+        int[][] mat2 = {
+            {2, 3},
+            {4, 1}
+        };
+        int rowsMat1 = mat1.length;
+        int colsMat1 = mat1[0].length;
+        int rowsMat2 = mat2.length;
+        int colsMat2 = mat2[0].length;
+        if (colsMat1 != rowsMat2) {
+            throw new IllegalArgumentException("Matrix dimensions do not allow multiplication.");
+        }
+        int[][] result = new int[rowsMat1][colsMat2];
+        for (int i = 0; i < rowsMat1; i++) {
+            for (int j = 0; j < colsMat2; j++) {
+                for (int k = 0; k < colsMat1; k++) {
+                    result[i][j] += mat1[i][k] * mat2[k][j];
+                }
+            }
+        }
+        System.out.println("Mat Sum = ");
+        for (int i = 0; i < rowsMat1; i++) {
+            for (int j = 0; j < colsMat2; j++) {
+                System.out.print(result[i][j] + "    ");
+            }
+            System.out.println();
+        }
+    }
+}
