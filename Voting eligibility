@@ -1,0 +1,14 @@
+public class Main {
+    public static void main(String[] args) {
+        int age = 7; 
+
+        int votingAge = 18;
+        if (age >= votingAge) {
+            System.out.println("You are eligible to vote.");
+        } else {
+            int yearsLeft = votingAge - age;
+            System.out.println("You are allowed to vote after " + yearsLeft + " years.");
+        }
+    }
+}
+
