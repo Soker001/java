@@ -1,0 +1,11 @@
+public class main{
+    public static void main(String[] args){
+        int[] x={20,50,100,200,500,2000};
+        int[] y={2,5,40,20,15,4};
+        int totalbalance=0;
+        for(int i=0;i<x.length;i++){
+            totalbalance+=x[i]*y[i];
+        }
+        System.out.print("total= "+totalbalance);
+    }
+}
